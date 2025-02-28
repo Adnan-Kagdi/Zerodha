@@ -1,0 +1,20 @@
+.openAccount{
+    text-align: center;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+}
+.openAccount p{
+    font-size: 1.1rem;
+}
+.signupBtn{
+    background-color: #387ED1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight:500;
+    padding: 0.5rem 2rem 0.5rem 2rem 
+}
+.signupBtn:hover{
+background-color: #282727;
+}

@@ -1,0 +1,25 @@
+.investMsg {
+    text-align: center
+}
+
+.container img{
+    padding: 3rem 8rem 3rem 8rem;
+}
+
+.investMsg p {
+    font-size: 1.1rem;
+}
+
+.signupBtn {
+    background-color: #387ED1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 2rem 0.5rem 2rem
+}
+
+.signupBtn:hover {
+    background-color: #282727;
+}

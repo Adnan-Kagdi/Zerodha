@@ -1,0 +1,42 @@
+.heroText1 h3 {
+    font-size: 2.1rem;
+    color: #424242;
+}
+
+.heroText1 {
+    margin-top: 6rem ;
+    margin-bottom: 6rem;
+}
+
+.hr {
+    color: grey;
+    opacity: 0.14;
+}
+
+.heroText2 {
+    margin-top: 6rem !important;
+    margin: auto;
+    display: flex;
+}
+
+.heroText2 a{
+    text-decoration: none;
+    color: #387ED1;
+}
+
+.heroText2 {
+    width: 62%;
+}
+
+.heroText2 p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    color: #424242
+}
+
+@media(max-width: 700px){
+    .about-col{
+        width: 100% !important;
+        margin-left: 1rem;
+    }
+}

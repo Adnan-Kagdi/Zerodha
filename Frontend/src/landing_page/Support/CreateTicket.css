@@ -1,0 +1,15 @@
+.anch a{
+    text-decoration: none;
+    color: #387ED1;
+    font-size: 0.93rem;
+    font-weight: 400;
+}
+
+.anch p{
+    line-height: 1.2rem;
+}
+
+.hd{
+    color: #222222 !important;
+    font-size: 1.15rem !important;
+}

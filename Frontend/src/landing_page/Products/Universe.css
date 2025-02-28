@@ -1,0 +1,24 @@
+.universe img {
+    padding: 0 !important
+}
+
+.uniRow {
+    margin: 4rem
+}
+
+.uniRow div {
+    margin-left: 4.4rem
+}
+
+@media(max-width: 700px) {
+    .uniRow {
+        width: 95%;
+        margin: auto;
+        margin-top: 4rem;
+        margin-right: 4.5rem;
+    }
+
+    .signupA{
+        margin-bottom: 3rem !important;
+    }
+}

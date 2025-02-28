@@ -1,0 +1,59 @@
+.statContainer {
+    margin-top: 4rem;
+    display: flex;
+}
+
+.statInfo {
+    width: 40%;
+    margin-left: 12rem;
+}
+
+.statInfo div {
+    width: 95%;
+    margin-top: 2rem
+}
+
+.statInfo div p {
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+}
+
+.statImg {
+    width: 60%;
+}
+
+.statImg img {
+    width: 80%;
+}
+
+.statAnc {
+    display: flex;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+.statAnc a {
+    margin-right: 2.2rem;
+    text-decoration: none;
+    color: #387ED1;
+    font-weight: 500;
+}
+
+@media(max-width: 800px) {
+    .statContainer {
+        display: inline;
+    }
+
+    .statInfo {
+        width: 70%;
+    }
+
+    .statImg {
+        width: 70%;
+        margin: 5rem 0rem 5rem 11rem
+    }
+
+    .statAnc{
+      margin-left: 5rem;
+    }
+}

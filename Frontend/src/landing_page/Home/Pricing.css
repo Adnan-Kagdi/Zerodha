@@ -1,0 +1,76 @@
+.pricingContainer {
+    margin-top: 4rem;
+    display: flex;
+}
+
+.pricingText {
+    width: 40%;
+    margin-left: 15rem;
+    font-size: 1.1rem;
+}
+
+.pricingText a {
+    text-decoration: none;
+    color: #387ED1
+}
+
+.pricingText div {
+    width: 95%;
+    margin-top: 2rem
+}
+
+.pricingText div p {
+    line-height: 1.9rem;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.pricingImg {
+    display: flex;
+    width: 65%;
+}
+
+.pricingImg div {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricingImg div span {
+    font-size: 0.7rem;
+    margin-top: 1.1rem;
+}
+
+.pricingImg div img {
+    width: 58%;
+}
+
+.pricing20 {
+    margin-left: 2rem;
+}
+
+.pricing0 {
+    width: 30% !important;
+}
+
+.pricing0 img {
+    width: 48% !important;
+}
+
+@media(max-width: 800px) {
+    .pricingContainer {
+        display: inline;
+    }
+
+    .pricingText {
+        margin-top: 4rem;
+        width: 50%;
+        margin:auto;
+    }
+
+    .pricingImg {
+        width: 80%;
+        margin-left: 8rem;
+    }
+}

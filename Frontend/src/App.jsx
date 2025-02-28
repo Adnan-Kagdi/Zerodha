@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import HomePage from './landing_page/Home/HomePage'
+import AboutPage from './landing_page/About/AboutPage'
+import ProductPage from './landing_page/Products/ProductPage'
+import PricingPage from './landing_page/Pricing/PricingPage'
+import SupportPage from './landing_page/Support/SupportPage'
+import Navbar from './landing_page/Navbar'
+import Footer from './landing_page/Footer'
+import Login from './landing_page/Signup/Login'
+import Signup from './landing_page/Signup/Signup'
 import './App.css'
+import "./index.css"
+import { AuthProvider } from "./authCotext"
 
-function App() {
-  const [count, setCount] = useState(0)
+function Layout() {
+  const location = useLocation();
 
+  const hideNavbarFooter = ["/signup", "/login"].includes(location.pathname);
+  
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!hideNavbarFooter && <Navbar />}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/support" element={<SupportPage />} />
+      </Routes>
+      {!hideNavbarFooter && <Footer />}
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </AuthProvider>
+  );
+}
+
+export default App;

@@ -1,0 +1,50 @@
+.teamContainer {
+    margin-top: 6rem;
+}
+
+.container1 {
+    display: flex;
+    margin: auto !important;
+    margin: 4rem 15rem 4rem 16rem !important;
+}
+
+.teamImg1 {
+    width: 35%;
+}
+
+.teamImg1 img {
+    width: 82%;
+    border-radius: 50%;
+
+}
+
+.teamImg1 {
+    margin: auto;
+}
+
+.teamInfo1 {
+    width: 52%;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.teamInfo1 p {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+.teamInfo1 a {
+    text-decoration: none;
+    color: #387ED1
+}
+
+@media(max-width: 700px) {
+    .container1 {
+        display: inline;
+    }
+
+    .teamInfo1 {
+        margin: auto;
+        margin-top: 2rem;
+    }
+}

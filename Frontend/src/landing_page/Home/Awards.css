@@ -1,0 +1,41 @@
+.awardContainer {
+    margin: 4rem 9.4rem 9rem 9.4rem
+}
+
+.awardInfo {
+    display: flex;
+    margin-top: 2.2rem;
+}
+
+.awardText {
+    margin-top: auto;
+    padding-left: 3rem;
+}
+
+.awardText h2{
+    font-size: 2.2rem;
+}
+
+.textImg img {
+    width: 90%;
+}
+
+.awardInfo li {
+    line-height: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.info2 {
+    margin-left: 5.5rem;
+}
+
+@media(max-width: 800px){
+    .awardImg{
+        width: 100%;
+    }
+
+    .awardText{
+        width: 100%;
+        margin-top: 4rem;
+    }
+}

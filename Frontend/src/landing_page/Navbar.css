@@ -1,0 +1,42 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    /* opacity: 0.9 */
+}
+
+
+.navContainer {
+    box-shadow: 2px 2px rgba(173, 173, 173, 0.119);
+}
+
+.container-fluid img {
+    width: 11%;
+}
+
+.container-fluid {
+    height: 52px;
+    margin-left: 12rem;
+}
+
+.navbar-nav li {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.navbar-nav li a {
+    color: #666666
+}
+
+.navbar-nav li a:hover {
+    color: #387ED1 !important
+}
+
+#navbarNav {
+    margin-left: 28rem;
+}
+
+@media(max-width: 800px) {
+    .container-fluid img{
+        width: 25%;
+    }
+}

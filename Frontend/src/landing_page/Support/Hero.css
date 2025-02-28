@@ -1,0 +1,39 @@
+.anc a {
+    text-decoration: underline;
+    color: white
+}
+
+.anc a:hover {
+    color: white;
+}
+
+.search input {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-style: none;
+}
+
+.anc1 {
+    flex-wrap: wrap;
+    font-size: 1.05rem;
+}
+
+.anc1 a {
+    text-underline-offset: 8px;
+}
+
+.anc2 {
+    font-size: 1.05rem;
+}
+
+.support-search{
+    padding-left: 1.8rem;
+}
+
+
+@media(max-width: 700px) {
+    .supportA {
+        display: inline-block !important;
+    }
+}

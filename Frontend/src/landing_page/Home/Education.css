@@ -1,0 +1,48 @@
+.eduContainer {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.eduInfo {
+    width: 35%;
+}
+
+.eduInfo a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #387ED1;
+}
+
+.eduInfo i {
+    font-size: 0.9rem;
+}
+
+.eduInfo p {
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.eduImg {
+    width: 40%;
+    margin-bottom: 2.5rem;
+}
+
+@media(max-width: 800px) {
+    .eduContainer {
+        display: inline;
+    }
+
+    .eduImg {
+        width: 70%;
+        margin: auto;
+        margin-top: 3rem;
+    }
+
+    .eduInfo {
+        width: 60%;
+        margin: auto;
+        margin-top: 5rem;
+    }
+}
