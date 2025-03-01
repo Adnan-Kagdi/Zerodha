@@ -13,7 +13,7 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       // localStorage.removeItem("userId");
-      await axios.post('http://localhost:3000/logout', {}, { withCredentials: true });
+      await axios.post('https://zerodha-byxx.onrender.com/logout', {}, { withCredentials: true });
       setCurrUser(null);
       setDashUsername(null);
 
@@ -63,7 +63,7 @@ function Navbar() {
               <Link onClick={handleLogout} className="nav-link" to="support">Logout</Link>
             </li> */}
             <li className="nav-item">
-              <Link className="nav-link nav-dashboard" to="http://localhost:5174">
+              <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
                 Dashboard
                 <ArrowForwardIcon className="mb-1 ms-1"
                   style={{ fontSize: "1.2rem" }}

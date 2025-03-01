@@ -10,7 +10,6 @@ import Login from './landing_page/Signup/Login'
 import Signup from './landing_page/Signup/Signup'
 import './App.css'
 import "./index.css"
-import { AuthProvider } from "./authCotext"
 
 function Layout() {
   const location = useLocation();

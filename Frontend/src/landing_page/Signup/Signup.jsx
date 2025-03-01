@@ -4,7 +4,6 @@ import axios from "axios";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
 import { useAuth } from "../../authCotext";
-import Cookies from "js-cookie";
 import "./Signup.css"
 
 function Signup() {
@@ -20,7 +19,7 @@ function Signup() {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/signup", {
+            const res = await axios.post("https://zerodha-byxx.onrender.com/signup", {
                 username: username,
                 email: email,
                 password: password
