@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { BarChartOutlined, KeyboardArrowDown, KeyboardArrowUp, MoreHoriz } from "@mui/icons-material"
-import { Tooltip, Grow } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import GeneralContext from "./GeneralContext";
 
 const WatchListItem = ({ stock, key }) => {

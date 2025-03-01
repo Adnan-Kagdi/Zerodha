@@ -1,11 +1,9 @@
 import React from "react";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
-import { useNavigate } from "react-router-dom";
 import AutoLogout from "./AutoLogout";
 
 const Home = () => {
-  const navigate = useNavigate();
   const getCookie = (name) => {
     const cookies = document.cookie.split('; ');
     for (let cookie of cookies) {

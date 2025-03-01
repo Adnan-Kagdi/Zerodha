@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-import DashBoard from "./Dashboard"
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
@@ -13,12 +12,12 @@ const SellActionWindow = ({ uid }) => {
     const [stockPrice, setStockPrice] = useState(0.0);
 
     const handleSellClick = () => {
-            axios.post("https://zerodha-byxx.onrender.com/newOrder", {
-                name: uid,
-                qty: stockQuantity,
-                price: stockPrice,
-                mode: "SELL",
-            });
+        axios.post("https://zerodha-byxx.onrender.com/newOrder", {
+            name: uid,
+            qty: stockQuantity,
+            price: stockPrice,
+            mode: "SELL",
+        });
 
     };
 
