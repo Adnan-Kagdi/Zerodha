@@ -1,7 +1,6 @@
 // import Logout from "./Signup/Logout";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../authCotext";
 import axios from "axios";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./Navbar.css";
@@ -59,9 +58,6 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="support">Support</Link>
             </li>
-            {/* <li style={!userId ? { display: "none" } : {}} className="nav-item">
-              <Link onClick={handleLogout} className="nav-link" to="support">Logout</Link>
-            </li> */}
             <li className="nav-item">
               <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
                 Dashboard
@@ -70,9 +66,6 @@ function Navbar() {
                 />
               </Link>
             </li>
-            {/* <li className="nav-item" style={{ fontSize: "1.2rem", marginTop: "6px" }} >
-              <i className="fa-solid fa-bars"></i>
-            </li> */}
           </ul>
         </div>
       </div>
