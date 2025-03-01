@@ -18,7 +18,7 @@ const AutoLogout = () => {
             const token = getCookie("token");
             if (!token) {
                 console.log("Token expired. Logging out...");
-                window.location.href = "http://localhost:5173/login"
+                window.location.href = "https://info-18ts.onrender.com/login"
             }
         }, 1000); // Check every second (adjust for efficiency)
 

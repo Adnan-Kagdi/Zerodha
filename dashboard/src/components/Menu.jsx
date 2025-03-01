@@ -27,7 +27,7 @@ const Menu = () => {
     const id = userId1.slice(0, -3);
     console.log(id);
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/getUser/${id}`);
+      const response = await fetch(`https://zerodha-byxx.onrender.com/getUser/${id}`);
       const result = await response.json();
       setUsername(result.username)
     }
@@ -52,10 +52,10 @@ const Menu = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/logout', {}, { withCredentials: true });
+      await axios.post('https://zerodha-byxx.onrender.com/logout', {}, { withCredentials: true });
       setCurrUser(null);
 
-      window.location.href = "http://localhost:5173/login";
+      window.location.href = "https://info-18ts.onrender.com/login";
     } catch (err) {
       console.error('Logout failed:', err);
     }
@@ -135,7 +135,7 @@ const Menu = () => {
         >
           <MenuItem onClick={handleLogout}>Logout</MenuItem>
           <Link
-            to="http://localhost:5173"
+            to="https://info-18ts.onrender.com"
             style={{ textDecoration: "none", color: "rgb(0, 0, 0, 0.90)" }}>
             <MenuItem onClick={handleClose}>Home</MenuItem>
           </Link>

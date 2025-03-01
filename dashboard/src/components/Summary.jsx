@@ -19,7 +19,7 @@ const Summary = () => {
     const id = userId1.slice(0, -3);
     console.log(id);
     const getUser = async () => {
-      const response = await fetch(`http://localhost:3000/getUser/${id}`);
+      const response = await fetch(`https://zerodha-byxx.onrender.com/getUser/${id}`);
       const result = await response.json();
       setUsername(result.username)
     }

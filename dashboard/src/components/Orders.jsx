@@ -7,7 +7,7 @@ const Orders = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/addOrders").then((res) => {
+    axios.get("https://zerodha-byxx.onrender.com/addOrders").then((res) => {
       console.log(res.data);
       setNewOrders(res.data);
     })

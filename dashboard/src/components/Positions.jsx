@@ -6,7 +6,7 @@ const Positions = () => {
   let [newPositons, setNewPositons] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/addPositions").then((res) => {
+    axios.get("https://zerodha-byxx.onrender.com/addPositions").then((res) => {
       console.log(res.data);
       setNewPositons(res.data);
     })

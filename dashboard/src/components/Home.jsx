@@ -26,7 +26,7 @@ const Home = () => {
             <Dashboard />
           </div>
         ) : (
-          window.location.href = "http://localhost:5173/login"
+          window.location.href = "https://info-18ts.onrender.com/login"
         )
       }
 
