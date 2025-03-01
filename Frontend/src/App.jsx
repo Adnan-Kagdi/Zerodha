@@ -36,11 +36,9 @@ function Layout() {
 
 function App() {
   return (
-    <AuthProvider>
       <BrowserRouter>
         <Layout />
       </BrowserRouter>
-    </AuthProvider>
   );
 }
 
