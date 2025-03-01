@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
-import { useAuth } from "../../authCotext";
 import "./Signup.css"
 
 function Signup() {

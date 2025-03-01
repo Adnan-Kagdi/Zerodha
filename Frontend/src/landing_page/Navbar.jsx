@@ -47,16 +47,16 @@ function Navbar() {
               <Link className="nav-link" to="/signup">Signup</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="about">About</Link>
+              <Link className="nav-link" to="/about">About</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="product">Products</Link>
+              <Link className="nav-link" to="/product">Products</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="pricing">Pricing</Link>
+              <Link className="nav-link" to="/pricing">Pricing</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="support">Support</Link>
+              <Link className="nav-link" to="/support">Support</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
