@@ -83,7 +83,6 @@ app.get("/addOrders", async (req, res) => {
 app.post("/logout", (req, res) => {
     res.clearCookie("token", { httpOnly: true, secure: false, sameSite: "Lax" });
     res.clearCookie("userId", { httpOnly: true, secure: false, sameSite: "Lax" });
-    // localStorage.removeItem("userId");
     res.json({ success: true, message: "Logged out successfully" });
 });
 
