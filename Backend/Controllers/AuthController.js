@@ -26,24 +26,23 @@ module.exports.signup = async (req, res) => {
       password: hashedPassword,
     })
 
-
-    // setUsername(user.username);
-    // console.log("Username : ", newUser.username);
     await newUser.save();
 
     const token = jwt.sign({ id: newUser._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
     res.cookie('token', token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
+      domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
-    res.cookie('userId', user._id, {
-      httpOnly: false,
+    res.cookie('userId', newUser._id, {
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
+      domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
@@ -76,22 +75,21 @@ module.exports.login = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" })
     }
 
-    // setUsername(user.username);
-    // console.log("Username : ", newUser.username);
-
     const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
     res.cookie('token', token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
+      domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
     res.cookie('userId', user._id, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
+      domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
