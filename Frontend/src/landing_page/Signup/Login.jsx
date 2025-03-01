@@ -10,8 +10,6 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { setCurrUser } = useAuth();
-
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -22,11 +20,6 @@ function Login() {
             },
                 { withCredentials: true }
             )
-
-            // localStorage.setItem("token", res.data.token);
-            // localStorage.setItem("userId", res.data.userId);
-
-            setCurrUser(res.data.userId);
 
             navigate("/");
         } catch (err) {

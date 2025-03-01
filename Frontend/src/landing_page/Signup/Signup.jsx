@@ -11,9 +11,6 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { setCurrUser } = useAuth();
-
-
     const handleSignup = async (e) => {
         e.preventDefault();
 
@@ -25,11 +22,6 @@ function Signup() {
             },
                 { withCredentials: true }
             )
-
-            // localStorage.setItem("token", res.data.token);
-            // localStorage.setItem("userId", res.data.userId);
-
-            setCurrUser(res.data.userId);
 
             navigate("/")
 
