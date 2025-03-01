@@ -5,7 +5,7 @@ const authenticateToken = (req, res, next) => {
     if (!token) return res.status(401).json({ message: "Access Denied" });
 
     jwt.verify(token, process.env.TOKEN_KEY, (err, user) => {
-        if (err) return res.status(403).redirect("http://localhost:5174");
+        if (err) return res.status(403).redirect("https://dashboard-pka9.onrender.com");
         req.user = user;
         next();
     });

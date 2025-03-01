@@ -36,7 +36,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(
     cors({
-        origin: ["http://localhost:5173", "http://localhost:5174"],
+        origin: ["https://info-18ts.onrender.com", "https://dashboard-pka9.onrender.com"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],
