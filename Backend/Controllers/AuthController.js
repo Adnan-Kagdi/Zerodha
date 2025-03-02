@@ -37,7 +37,7 @@ module.exports.signup = async (req, res) => {
       domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
- 
+
     res.cookie('userId', newUser._id, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -56,6 +56,7 @@ module.exports.signup = async (req, res) => {
 }
 
 module.exports.login = async (req, res) => {
+  console.log("Login request received:", req.body);
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -79,14 +80,14 @@ module.exports.login = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: isProduction,
+      secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       maxAge: 3600000
     });
 
     res.cookie('userId', user._id.toString(), {
       httpOnly: true,
-      secure: isProduction,
+      secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       maxAge: 3600000
     });
