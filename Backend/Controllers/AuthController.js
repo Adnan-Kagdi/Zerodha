@@ -78,7 +78,7 @@ module.exports.login = async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
     res.cookie('token', token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       domain: ".https://dashboard-pka9.onrender.com",
@@ -86,7 +86,7 @@ module.exports.login = async (req, res) => {
     });
 
     res.cookie('userId', user._id, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       domain: ".https://dashboard-pka9.onrender.com",
