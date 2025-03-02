@@ -17,14 +17,18 @@ function Login() {
             const res = await axios.post("https://zerodha-byxx.onrender.com/login", {
                 email: email,
                 password: password
-            },
-                { withCredentials: true }
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            }
             )
 
             navigate("/");
         } catch (err) {
             console.error(err);
-            alert("Login Failed!");
+            alert("Login Failed!", err);
         }
     }
 
