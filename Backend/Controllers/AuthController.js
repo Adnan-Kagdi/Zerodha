@@ -81,15 +81,13 @@ module.exports.login = async (req, res) => {
       httpOnly: true,
       secure: isProduction,
       sameSite: 'lax',
-      domain: isProduction ? '.dashboard-pka9.onrender.com' : 'localhost',
       maxAge: 3600000
     });
 
-    res.cookie('userId', user._id, {
+    res.cookie('userId', user._id.toString(), {
       httpOnly: true,
       secure: isProduction,
       sameSite: 'lax',
-      domain: isProduction ? '.dashboard-pka9.onrender.com' : 'localhost',
       maxAge: 3600000
     });
 
