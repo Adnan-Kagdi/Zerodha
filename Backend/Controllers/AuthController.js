@@ -31,18 +31,18 @@ module.exports.signup = async (req, res) => {
     const token = jwt.sign({ id: newUser._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
     res.cookie('token', token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      domain: ".https://dashboard-pka9.onrender.com",
+      sameSite: 'lax',
+      // domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
-
+ 
     res.cookie('userId', newUser._id, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      domain: ".https://dashboard-pka9.onrender.com",
+      sameSite: 'lax',
+      // domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
@@ -80,16 +80,16 @@ module.exports.login = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      domain: ".https://dashboard-pka9.onrender.com",
+      sameSite: 'lax',
+      // domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
     res.cookie('userId', user._id, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      domain: ".https://dashboard-pka9.onrender.com",
+      sameSite: 'lax',
+      // domain: ".https://dashboard-pka9.onrender.com",
       maxAge: 3600000
     });
 
