@@ -80,18 +80,19 @@ module.exports.login = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: true,
       sameSite: 'lax',
       maxAge: 3600000
     });
 
     res.cookie('userId', user._id.toString(), {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: true,
       sameSite: 'lax',
       maxAge: 3600000
     });
-
+    
+    console.log('Set-Cookie headers:', res.getHeaders()['set-cookie']);
     res.json({ token, userId: user._id })
   } catch (err) {
     console.log("Error during login: ", err.message);
