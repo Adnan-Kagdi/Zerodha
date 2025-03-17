@@ -32,17 +32,15 @@ module.exports.signup = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      domain: ".https://dashboard-pka9.onrender.com",
+      secure: process.env.NODE_ENV === "production",
+      sameSite: 'none',
       maxAge: 3600000
     });
 
     res.cookie('userId', newUser._id, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      domain: ".https://dashboard-pka9.onrender.com",
+      secure: process.env.NODE_ENV === "production",
+      sameSite: 'none',
       maxAge: 3600000
     });
 
