@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 
 app.use(
     cors({
-        origin: ["https://info-18ts.onrender.com", "https://dashboard-pka9.onrender.com"],
+        origin: ["https://info-18ts.onrender.com"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],
