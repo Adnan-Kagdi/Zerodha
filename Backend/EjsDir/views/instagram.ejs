@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>This page belongs to <%= username.toUpperCase() %></h2>
+    <button>Follow</button>
+    <button>Message</button>
+    <br>
+    <p>Followers: <%= data.followers %> &nbsp &nbsp 
+    Followings: <%= data.following %></p>
+    <hr>
+    <% for(let post of data.posts){ %>
+      <img src="<%= post.image %>" alt="some img"/>
+      <br>
+      <p>likes: <%= post.likes %> &nbsp &nbsp 
+        comments: <%= post.comments %></p>
+    <% } %>
+    <script src="/app.js"></script>
+</body>
+</html>
