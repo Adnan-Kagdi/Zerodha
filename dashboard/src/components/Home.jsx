@@ -16,17 +16,17 @@ const Home = () => {
   const token = getCookie("token");
   return (
     <>
-      {
+      {/* {
         token ? (
-          <div>
+          <div> */}
             <AutoLogout />
             <TopBar />
             <Dashboard />
-          </div>
+          {/* </div>
         ) : (
           window.location.href = "https://info-18ts.onrender.com/login"
         )
-      }
+      } */}
 
     </>
   );
