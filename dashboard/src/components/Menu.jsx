@@ -115,7 +115,7 @@ const Menu = () => {
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
           >
-            {username.slice(0, 2).toUpperCase()}
+            {/* {username.slice(0, 2).toUpperCase()} */}
           </Avatar>
         </div>
         <Menu1
