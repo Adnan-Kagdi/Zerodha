@@ -40,7 +40,7 @@ module.exports.signup = async (req, res) => {
 
     res.cookie('userId', newUser._id, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       sameSite: 'none',
       domain: ".onrender.com",
       maxAge: 3600000
