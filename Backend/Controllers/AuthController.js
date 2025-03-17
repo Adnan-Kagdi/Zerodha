@@ -80,14 +80,14 @@ module.exports.login = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: 'none',
       maxAge: 3600000
     });
 
     res.cookie('userId', user._id.toString(), {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: 'none',
       maxAge: 3600000
     });
