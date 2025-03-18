@@ -7,7 +7,11 @@ const Orders = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    axios.get("https://zerodha-byxx.onrender.com/addOrders").then((res) => {
+    axios.get("https://zerodha-byxx.onrender.com/addOrders", {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
       console.log(res.data);
       setNewOrders(res.data);
     })

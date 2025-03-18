@@ -8,7 +8,11 @@ const Holdings = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    axios.get("https://zerodha-byxx.onrender.com/addHoldings").then((res) => {
+    axios.get("https://zerodha-byxx.onrender.com/addHoldings", {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
       console.log(res.data);
       setNewHoldings(res.data);
     })
