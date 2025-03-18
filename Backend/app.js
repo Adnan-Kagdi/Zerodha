@@ -96,13 +96,8 @@ app.get("/addOrders", async (req, res) => {
 // });
 
 // Logout: Clear the token cookie
-app.post('/logout', (req, res) => {
-    res.send(`
-      <script>
-        localStorage.removeItem('token'); // Clear the token
-        window.location.href = '/login'; // Redirect to login
-      </script>
-    `);
+app.post("/logout", (req, res) => {
+    res.json({ success: true, redirectUrl: "https://info-18ts.onrender.com/logout-clear" });
 });
 
 app.get("/getUser/:id", async (req, res) => {

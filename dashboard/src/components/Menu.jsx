@@ -52,14 +52,14 @@ const Menu = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('https://zerodha-byxx.onrender.com/logout', {}, { withCredentials: true });
+        const response = await axios.post("https://zerodha-byxx.onrender.com/logout", {}, { withCredentials: true });
 
-      window.open("https://info-18ts.onrender.com/login", "_self");
-
+        // Redirect user to `info` where localStorage will be cleared
+        window.location.href = response.data.redirectUrl;
     } catch (err) {
-      console.error('Logout failed:', err);
+        console.error("Logout failed:", err);
     }
-  };
+};
 
   let menuClass = "menu"
   let activeMenuClass = "menu selected"
