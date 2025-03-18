@@ -90,8 +90,8 @@ app.get("/addOrders", async (req, res) => {
 
 // Logout: Clear the token cookie
 app.post("/logout", (req, res) => {
-    res.clearCookie("token", { httpOnly: true, secure: false, sameSite: "Lax" });
-    res.clearCookie("userId", { httpOnly: true, secure: false, sameSite: "Lax" });
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     res.json({ success: true, message: "Logged out successfully" });
 });
 

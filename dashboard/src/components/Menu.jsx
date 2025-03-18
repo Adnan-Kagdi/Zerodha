@@ -9,30 +9,30 @@ import axios from "axios";
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropDownMenu, setIsProfileDropDownMenu] = useState(false);
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const getCookie = (name) => {
-    const cookies = document.cookie.split("; ");
-    for (let cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === name) return value;
-    }
-    return null;
-  };
+  // const getCookie = (name) => {
+  //   const cookies = document.cookie.split("; ");
+  //   for (let cookie of cookies) {
+  //     const [key, value] = cookie.split("=");
+  //     if (key === name) return value;
+  //   }
+  //   return null;
+  // };
 
-  useEffect(() => {
-    const userId = getCookie("userId")
-    const userId1 = userId.slice(7);
-    const id = userId1.slice(0, -3);
-    console.log(id);
-    const getUser = async () => {
-      const response = await fetch(`https://zerodha-byxx.onrender.com/getUser/${id}`);
-      const result = await response.json();
-      setUsername(result.username)
-    }
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   const userId = getCookie("userId")
+  //   const userId1 = userId.slice(7);
+  //   const id = userId1.slice(0, -3);
+  //   console.log(id);
+  //   const getUser = async () => {
+  //     const response = await fetch(`https://zerodha-byxx.onrender.com/getUser/${id}`);
+  //     const result = await response.json();
+  //     setUsername(result.username)
+  //   }
+  //   getUser();
+  // }, []);
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
