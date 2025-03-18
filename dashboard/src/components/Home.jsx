@@ -1,25 +1,25 @@
 import React from "react";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
-import AutoLogout from "./AutoLogout";
+// import AutoLogout from "./AutoLogout";
 
 const Home = () => {
-  const getCookie = (name) => {
-    const cookies = document.cookie.split('; ');
-    for (let cookie of cookies) {
-      const [key, value] = cookie.split('=');
-      if (key === name) return value;
-    }
-    return null;
-  };
+  // const getCookie = (name) => {
+  //   const cookies = document.cookie.split('; ');
+  //   for (let cookie of cookies) {
+  //     const [key, value] = cookie.split('=');
+  //     if (key === name) return value;
+  //   }
+  //   return null;
+  // };
 
-  const token = getCookie("token");
+  // const token = getCookie("token");
   return (
     <>
       {/* {
         token ? (
           <div> */}
-            <AutoLogout />
+            {/* <AutoLogout /> */}
             <TopBar />
             <Dashboard />
           {/* </div>
