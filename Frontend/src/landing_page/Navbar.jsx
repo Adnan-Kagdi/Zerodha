@@ -56,12 +56,22 @@ function Navbar() {
               <Link className="nav-link" to="/support">Support</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
-                Dashboard
-                <ArrowForwardIcon className="mb-1 ms-1"
-                  style={{ fontSize: "1.2rem" }}
-                />
-              </Link>
+
+              {userId ? (
+                <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
+                  Dashboard
+                  <ArrowForwardIcon className="mb-1 ms-1"
+                    style={{ fontSize: "1.2rem" }}
+                  />
+                </Link>
+              ) : (
+                <Link className="nav-link nav-dashboard" to="/login">
+                  Dashboard
+                  <ArrowForwardIcon className="mb-1 ms-1"
+                    style={{ fontSize: "1.2rem" }}
+                  />
+                </Link>
+              )}
             </li>
           </ul>
         </div>

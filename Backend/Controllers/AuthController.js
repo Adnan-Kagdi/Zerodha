@@ -30,21 +30,21 @@ module.exports.signup = async (req, res) => {
 
     const token = jwt.sign({ id: newUser._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
-    res.cookie('token', token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-      domain: ".onrender.com",
-      maxAge: 3600000
-    });
+    // res.cookie('token', token, {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: 'none',
+    //   domain: ".onrender.com",
+    //   maxAge: 3600000
+    // });
 
-    res.cookie('userId', newUser._id, {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
-      domain: ".onrender.com",
-      maxAge: 3600000
-    });
+    // res.cookie('userId', newUser._id, {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: 'none',
+    //   domain: ".onrender.com",
+    //   maxAge: 3600000
+    // });
 
     res.status(201).json({ message: "User registered successfully", token, userId: newUser._id });
 
@@ -78,19 +78,19 @@ module.exports.login = async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, process.env.TOKEN_KEY, { expiresIn: "1h" });
 
-    res.cookie('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: 'none',
-      maxAge: 3600000
-    });
+    // res.cookie('token', token, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === "production",
+    //   sameSite: 'none',
+    //   maxAge: 3600000
+    // });
 
-    res.cookie('userId', user._id.toString(), {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: 'none',
-      maxAge: 3600000
-    });
+    // res.cookie('userId', user._id.toString(), {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === "production",
+    //   sameSite: 'none',
+    //   maxAge: 3600000
+    // });
     
     console.log('Set-Cookie headers:', res.getHeaders()['set-cookie']);
     res.json({ token, userId: user._id })

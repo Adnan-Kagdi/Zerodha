@@ -22,7 +22,11 @@ function Login() {
             }
             )
 
-            navigate("/");
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("userId", res.data.userId);
+
+            window.location.href = "https://dashboard-pka9.onrender.com"
+            
         } catch (err) {
             console.error(err);
             alert("Login Failed!", err);
