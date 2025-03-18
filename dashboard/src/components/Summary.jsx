@@ -27,12 +27,12 @@ const Summary = () => {
 
   return (
     <>
-      <div className="username">
+      {/* <div className="username">
         <h6>
-          {/* Hi, {username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()} */}
+          Hi, {username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()}
         </h6>
         <hr className="divider" />
-      </div>
+      </div> */}
 
       <div className="section">
         <span>
