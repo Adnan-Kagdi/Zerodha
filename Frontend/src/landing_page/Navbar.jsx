@@ -6,29 +6,20 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./Navbar.css";
 
 function Navbar() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleLogout = async () => {
-  //   try {
-  //     // localStorage.removeItem("userId");
-  //     await axios.post('https://zerodha-byxx.onrender.com/logout', {}, { withCredentials: true });
+  const handleLogout = async () => {
+    try {
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
 
-  //     navigate('/login');
-  //   } catch (err) {
-  //     console.error('Logout failed:', err);
-  //   }
-  // };
-
-  const getCookie = (name) => {
-    const cookies = document.cookie.split("; ");
-    for (let cookie of cookies) {
-      const [key, value] = cookie.split("=");
-      if (key === name) return value;
+      navigate('/login');
+    } catch (err) {
+      console.error('Logout failed:', err);
     }
-    return null;
   };
 
-  const userId = getCookie("userId");
+  const userId = localStorage.getItem("userId");
 
   return (
     <nav className="navbar navbar-expand-lg bg-body navContainer">

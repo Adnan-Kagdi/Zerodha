@@ -89,10 +89,13 @@ app.get("/addOrders", async (req, res) => {
 
 
 // Logout: Clear the token cookie
-app.post("/logout", (req, res) => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-    res.json({ success: true, message: "Logged out successfully" });
+app.post('/logout', (req, res) => {
+    res.send(`
+      <script>
+        localStorage.removeItem('token'); // Clear the token
+        window.location.href = '/login'; // Redirect to login
+      </script>
+    `);
 });
 
 app.get("/getUser/:id", async (req, res) => {
