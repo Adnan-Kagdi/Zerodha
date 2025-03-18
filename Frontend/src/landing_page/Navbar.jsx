@@ -32,7 +32,7 @@ function Navbar() {
           <ul className="navbar-nav">
 
             <li style={userId ? { display: "none" } : {}} className="nav-item">
-              <Link className="nav-link" to="/login">login</Link>
+              <Link className="nav-link" to="/login">Login</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
