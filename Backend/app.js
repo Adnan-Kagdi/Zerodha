@@ -87,6 +87,13 @@ app.get("/addOrders", async (req, res) => {
     res.json(allOrders);
 })
 
+// app.get("/check-userId", (req, res) => {
+//     const userId = req.headers.authorization; // Get from frontend request
+//     if (!userId) {
+//         return res.status(401).json({ authenticated: false });
+//     }
+//     res.json({ authenticated: true });
+// });
 
 // Logout: Clear the token cookie
 app.post('/logout', (req, res) => {

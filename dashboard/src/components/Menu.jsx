@@ -53,7 +53,6 @@ const Menu = () => {
   const handleLogout = async () => {
     try {
       await axios.post('https://zerodha-byxx.onrender.com/logout', {}, { withCredentials: true });
-      setCurrUser(null);
 
       window.open("https://info-18ts.onrender.com/login", "_self");
 
