@@ -1,38 +1,26 @@
 import React, { useEffect, useState } from "react";
 
 const Summary = () => {
-  // const [username, setUsername] = useState("");
+const [username, setUsername] = useState("");
 
-  // const getCookie = (name) => {
-  //   const cookies = document.cookie.split("; ");
-  //   for (let cookie of cookies) {
-  //     const [key, value] = cookie.split("=");
-  //     if (key === name) return value;
-  //   }
-  //   return null;
-  // };
-
-  // useEffect(() => {
-  //   const userId = getCookie("userId")
-  //   const userId1 = userId.slice(7);
-  //   const id = userId1.slice(0, -3);
-  //   console.log(id);
-  //   const getUser = async () => {
-  //     const response = await fetch(`https://zerodha-byxx.onrender.com/getUser/${id}`);
-  //     const result = await response.json();
-  //     setUsername(result.username)
-  //   }
-  //   getUser();
-  // }, []);
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await fetch(`https://zerodha-byxx.onrender.com/getCurrUser`);
+      const result = await response.json();
+      setUsername(result);
+      console.log(result);
+    }
+    getUser();
+  }, []);
 
   return (
     <>
-      {/* <div className="username">
+      <div className="username">
         <h6>
-          Hi, {username.charAt(0).toUpperCase() + username.slice(1).toLowerCase()}
+          Hi, {username}
         </h6>
         <hr className="divider" />
-      </div> */}
+      </div>
 
       <div className="section">
         <span>

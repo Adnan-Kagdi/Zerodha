@@ -13,7 +13,6 @@ const { OrdersModel } = require("./models/OrdersModel")
 
 const authenticateToken = require("./authenticateToken.js");
 const { User } = require("./models/UserModel.js");
-const { userVerification } = require("./Middlewares/AuthMiddleware.js");
 
 const PORT = process.env.PORT || 3000
 const url = process.env.MONGO_URL
@@ -62,17 +61,17 @@ app.use(express.json());
 app.use("/", authRoute)
 
 
-app.get("/addHoldings", userVerification, async (req, res) => {
+app.get("/addHoldings", async (req, res) => {
     let allHoldings = await HoldingsModel.find({});
     res.json(allHoldings);
 })
 
-app.get("/addPositions", userVerification, async (req, res) => {
+app.get("/addPositions", async (req, res) => {
     let allPositions = await PositionsModel.find({});
     res.json(allPositions);
 })
 
-app.post("/newOrder", userVerification, (req, res) => {
+app.post("/newOrder", (req, res) => {
     let newOrder = new OrdersModel({
         name: req.body.name,
         qty: req.body.qty,
@@ -85,7 +84,7 @@ app.post("/newOrder", userVerification, (req, res) => {
     res.send("Orders saved!");
 })
 
-app.get("/addOrders", userVerification, async (req, res) => {
+app.get("/addOrders", async (req, res) => {
     let allOrders = await OrdersModel.find({});
     res.json(allOrders);
 })
@@ -95,6 +94,16 @@ app.post("/logout", (req, res) => {
     localStorage.removeItem("userId");
     res.json({ redirectUrl: "https://info-18ts.onrender.com/login" });
 });
+
+app.get("/getCurrUser", async (req, res) => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+        return res.json({ status: false })
+    }
+    const user = await User.findById(userId);
+    if (user) return res.json({ status: true, user: user.username })
+    else return res.json({ status: false })
+})
 
 app.listen(PORT, () => {
     console.log(`app is listening on port ${PORT}`);
