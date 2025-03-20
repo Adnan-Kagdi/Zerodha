@@ -17,16 +17,14 @@ function Login() {
             const res = await axios.post("https://zerodha-byxx.onrender.com/login", {
                 email: email,
                 password: password
-            }, {
-                withCredentials: true
-            }
+            }, { credentials: "include" }
             )
 
-            localStorage.setItem("token", res.data.token);
-            localStorage.setItem("userId", res.data.userId);
+            // localStorage.setItem("token", res.data.token);
+            // localStorage.setItem("userId", res.data.userId);
 
             window.location.href = "https://dashboard-pka9.onrender.com"
-            
+
         } catch (err) {
             console.error(err);
             alert("Login Failed!", err);

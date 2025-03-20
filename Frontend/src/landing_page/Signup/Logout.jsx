@@ -6,8 +6,8 @@ const LogoutClear = () => {
 
     useEffect(() => {
         // Clear localStorage
-        localStorage.removeItem("token");
-        localStorage.removeItem("userId");
+        // localStorage.removeItem("token");
+        // localStorage.removeItem("userId");
 
         // Redirect to login after a short delay
         setTimeout(() => {

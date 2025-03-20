@@ -35,24 +35,24 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// app.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Credentials", "true");
-//     res.header("Access-Control-Allow-Origin", req.headers.origin);
-//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//     next();
-// });
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Origin", req.headers.origin);
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+});
 
-// app.use(
-//     cors({
-//         origin: ["https://info-18ts.onrender.com/", "https://dashboard-pka9.onrender.com"],
-//         methods: ["GET", "POST", "PUT", "DELETE"],
-//         credentials: true,
-//         allowedHeaders: ["Content-Type", "Authorization"],
-//     })
-// );
+app.use(
+    cors({
+        origin: ["https://info-18ts.onrender.com/", "https://dashboard-pka9.onrender.com"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
+        // allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 
-app.use(cors());
+// app.use(cors());
 
 app.use(cookieParser());
 
