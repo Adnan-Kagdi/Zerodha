@@ -48,7 +48,7 @@ app.use(
         origin: ["https://info-18ts.onrender.com/", "https://dashboard-pka9.onrender.com"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
-        // allowedHeaders: ["Content-Type", "Authorization"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
 
