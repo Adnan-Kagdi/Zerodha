@@ -124,10 +124,10 @@ app.post("/logout", (req, res) => {
     res.json({ success: true, redirectUrl: "https://info-18ts.onrender.com/logout-clear" });
 });
 
-app.get("/getUser/:id", async (req, res) => {
-    const { id } = req.params
-    const result = await User.findById(id);
-    res.json(result);
+app.get("/getCurrUser", async (req, res) => {
+    const userId = localStorage.getItem("userId");
+    const user = await User.findById(userId);
+    res.json({ user });
 })
 
 app.listen(PORT, () => {
