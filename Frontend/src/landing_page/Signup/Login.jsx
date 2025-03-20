@@ -17,7 +17,7 @@ function Login() {
             const res = await axios.post("https://zerodha-byxx.onrender.com/login", {
                 email: email,
                 password: password
-            }, { credentials: "include" }
+            }, { withCredentials: true }
             )
 
             // localStorage.setItem("token", res.data.token);

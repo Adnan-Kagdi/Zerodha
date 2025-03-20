@@ -20,7 +20,7 @@ function Signup() {
                 email: email,
                 password: password
             },
-                { credentials: "include" }
+                { withCredentials: true }
             )
 
             // localStorage.setItem("token", res.data.token);

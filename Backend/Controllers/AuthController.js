@@ -34,16 +34,16 @@ module.exports.signup = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: 'none',
-      domain: ".onrender.com",
-      maxAge: 3600000
+      maxAge: 3600000,
+      domain: ".onrender.com"
     });
 
     res.cookie('userId', newUser._id, {
       httpOnly: true,
       secure: true,
       sameSite: 'none',
-      domain: ".onrender.com",
-      maxAge: 3600000
+      maxAge: 3600000,
+      domain: ".onrender.com"
     });
 
     res.status(201).json({ message: "User registered successfully", token, userId: newUser._id });
@@ -80,16 +80,18 @@ module.exports.login = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       sameSite: 'none',
-      maxAge: 3600000
+      maxAge: 3600000,
+      domain: ".onrender.com"
     });
 
     res.cookie('userId', user._id.toString(), {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       sameSite: 'none',
-      maxAge: 3600000
+      maxAge: 3600000,
+      domain: ".onrender.com"
     });
     
     console.log('Set-Cookie headers:', res.getHeaders()['set-cookie']);
