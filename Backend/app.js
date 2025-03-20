@@ -96,14 +96,14 @@ app.post("/logout", (req, res) => {
 });
 
 app.get("/getCurrUser", async (req, res) => {
-    const userId = localStorage.getItem("userId");
+    const userId = req.query.userId
     if (!userId) {
-        return res.json({ status: false })
+      return res.json({ status: false });
     }
     const user = await User.findById(userId);
-    if (user) return res.json({ status: true, user: user.username })
-    else return res.json({ status: false })
-})
+    if (user) return res.json({ status: true, user: user.username });
+    else return res.json({ status: false });
+  });
 
 app.listen(PORT, () => {
     console.log(`app is listening on port ${PORT}`);
