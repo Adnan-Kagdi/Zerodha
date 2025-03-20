@@ -45,7 +45,15 @@ const allowedOrigins = [
 
 app.use(
     cors({
-        origin: allowedOrigins,
+        origin: function (origin, callback) {
+            console.log("Incoming origin:", origin);
+            if (!origin) return callback(null, true);
+            if (allowedOrigins.indexOf(origin) === -1) {
+                const msg = "The CORS policy for this site does not allow access from the specified Origin.";
+                return callback(new Error(msg), false);
+            }
+            return callback(null, true);
+        },
         methods: ["GET", "POST", "PUT", "DELETE"],
         // credentials: true,  // Remove if not using cookies
         allowedHeaders: ["Content-Type", "Authorization"],
@@ -98,12 +106,12 @@ app.post("/logout", (req, res) => {
 app.get("/getCurrUser", async (req, res) => {
     const userId = req.query.userId
     if (!userId) {
-      return res.json({ status: false });
+        return res.json({ status: false });
     }
     const user = await User.findById(userId);
     if (user) return res.json({ status: true, user: user.username });
     else return res.json({ status: false });
-  });
+});
 
 app.listen(PORT, () => {
     console.log(`app is listening on port ${PORT}`);
