@@ -55,7 +55,6 @@ app.use(
             return callback(null, true);
         },
         methods: ["GET", "POST", "PUT", "DELETE"],
-        // credentials: true,  // Remove if not using cookies
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
@@ -103,15 +102,15 @@ app.post("/logout", (req, res) => {
     res.json({ redirectUrl: "https://info-18ts.onrender.com/login" });
 });
 
-app.get("/getCurrUser", async (req, res) => {
-    const userId = req.query.userId
-    if (!userId) {
-        return res.json({ status: false });
-    }
-    const user = await User.findById(userId);
-    if (user) return res.json({ status: true, user: user.username });
-    else return res.json({ status: false });
-});
+// app.get("/getCurrUser", async (req, res) => {
+//     const userId = req.query.userId
+//     if (!userId) {
+//         return res.json({ status: false });
+//     }
+//     const user = await User.findById(userId);
+//     if (user) return res.json({ status: true, user: user.username });
+//     else return res.json({ status: false });
+// });
 
 app.listen(PORT, () => {
     console.log(`app is listening on port ${PORT}`);

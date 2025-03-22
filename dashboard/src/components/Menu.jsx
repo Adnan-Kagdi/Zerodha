@@ -9,19 +9,19 @@ import axios from "axios";
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropDownMenu, setIsProfileDropDownMenu] = useState(false);
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const getUser = async () => {
-      const response = await fetch(`https://zerodha-byxx.onrender.com/getCurrUser`);
-      const result = await response.json();
-      setUsername(result);
-      console.log(result);
-    }
-    getUser();
-  }, []);
+  //   const getUser = async () => {
+  //     const response = await fetch(`https://zerodha-byxx.onrender.com/getCurrUser`);
+  //     const result = await response.json();
+  //     setUsername(result);
+  //     console.log(result);
+  //   }
+  //   getUser();
+  // }, []);
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
@@ -39,16 +39,16 @@ const Menu = () => {
     setAnchorEl(null);
   };
 
-  const handleLogout = async () => {
-    try {
-        const response = await axios.post("https://zerodha-byxx.onrender.com/logout", {}, { withCredentials: true });
+//   const handleLogout = async () => {
+//     try {
+//         const response = await axios.post("https://zerodha-byxx.onrender.com/logout", {}, { withCredentials: true });
 
-        // Redirect user to `info` where localStorage will be cleared
-        window.location.href = response.data.redirectUrl;
-    } catch (err) {
-        console.error("Logout failed:", err);
-    }
-};
+//         // Redirect user to `info` where localStorage will be cleared
+//         window.location.href = response.data.redirectUrl;
+//     } catch (err) {
+//         console.error("Logout failed:", err);
+//     }
+// };
 
   let menuClass = "menu"
   let activeMenuClass = "menu selected"
@@ -122,7 +122,7 @@ const Menu = () => {
             horizontal: 'left',
           }}
         >
-          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          <MenuItem>Logout</MenuItem>
           <Link
             to="https://info-18ts.onrender.com"
             style={{ textDecoration: "none", color: "rgb(0, 0, 0, 0.90)" }}>

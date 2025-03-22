@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 
 const Summary = () => {
-const [username, setUsername] = useState("");
+// const [username, setUsername] = useState("");
 
-  useEffect(() => {
-    const getUser = async () => {
-      const response = await fetch(`https://zerodha-byxx.onrender.com/getCurrUser`);
-      const result = await response.json();
-      setUsername(result);
-      console.log(result);
-    }
-    getUser();
-  }, []);
+//   useEffect(() => {
+//     const getUser = async () => {
+//       const response = await fetch(`https://zerodha-byxx.onrender.com/getCurrUser`);
+//       const result = await response.json();
+//       setUsername(result);
+//       console.log(result);
+//     }
+//     getUser();
+//   }, []);
 
   return (
     <>
-      <div className="username">
+      {/* <div className="username">
         <h6>
           Hi, {username}
         </h6>
         <hr className="divider" />
-      </div>
+      </div> */}
 
       <div className="section">
         <span>

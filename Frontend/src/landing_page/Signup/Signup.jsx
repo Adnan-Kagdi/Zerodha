@@ -24,8 +24,8 @@ function Signup() {
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("userId", res.data.userId);
 
-            const userId = res.data.userId;
-            await axios.get(`https://zerodha-byxx.onrender.com/getCurrUser?userId=${userId}`);
+            // const userId = res.data.userId;
+            // await axios.get(`https://zerodha-byxx.onrender.com/getCurrUser?userId=${userId}`);
 
             window.location.href = "https://dashboard-pka9.onrender.com"
 
