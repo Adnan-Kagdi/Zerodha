@@ -3,15 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { Alert } from "@mui/material";
 import "./Login.css"
 
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [validate, setValidate] = useState(false);
 
     const handleLogin = async (e) => {
         e.preventDefault();
+
+        if (!email || !password) {
+            return setValidate(true);
+        } else {
+            setValidate(false);
+        }
 
         try {
             const res = await axios.post("https://zerodha-byxx.onrender.com/login", {
@@ -27,15 +35,25 @@ function Login() {
             // await axios.get(`https://zerodha-byxx.onrender.com/getCurrUser?userId=${userId}`);
 
             window.location.href = "https://dashboard-pka9.onrender.com"
-            
+
         } catch (err) {
             console.error(err);
             alert("Login Failed!", err);
         }
     }
 
+    const handleClosingAlert = () => {
+        setValidate(false);
+    }
+
     return (
         <div className="main-container">
+            <div className={!validate ? "d-none" : "mb-3 login-alert"}>
+                        <Alert severity="error" onClose={handleClosingAlert}
+                            style={{ borderRadius: "30px" }}>
+                            Please fill out the required fields below.
+                        </Alert>
+                    </div>
             <div className="login-container mt-5">
                 <div className="login-box">
                     <form onSubmit={handleLogin} noValidate className=" g-3 needs-validation">

@@ -8,8 +8,6 @@ import axios from "axios";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
-  const [isProfileDropDownMenu, setIsProfileDropDownMenu] = useState(false);
-  // const [username, setUsername] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
 
   // useEffect(() => {
@@ -27,28 +25,24 @@ const Menu = () => {
     setSelectedMenu(index);
   }
 
-  const handleProfileClick = () => {
-    setIsProfileDropDownMenu(!isProfileDropDownMenu);
-  }
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  //   const handleLogout = async () => {
+  //     try {
+  //         const response = await axios.post("https://zerodha-byxx.onrender.com/logout", {}, { withCredentials: true });
 
-//   const handleLogout = async () => {
-//     try {
-//         const response = await axios.post("https://zerodha-byxx.onrender.com/logout", {}, { withCredentials: true });
-
-//         // Redirect user to `info` where localStorage will be cleared
-//         window.location.href = response.data.redirectUrl;
-//     } catch (err) {
-//         console.error("Logout failed:", err);
-//     }
-// };
+  //         // Redirect user to `info` where localStorage will be cleared
+  //         window.location.href = response.data.redirectUrl;
+  //     } catch (err) {
+  //         console.error("Logout failed:", err);
+  //     }
+  // };
 
   let menuClass = "menu"
   let activeMenuClass = "menu selected"
@@ -96,39 +90,16 @@ const Menu = () => {
           </li>
         </ul>
         <hr />
-        <div className="profile" onClick={handleProfileClick}>
+        <div className="profile">
           <Avatar src="/broken-image.jpg" className="avatar"
             id="demo-positioned-button"
             aria-controls={open ? 'demo-positioned-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
           >
             {/* {username.slice(0, 2).toUpperCase()} */}
           </Avatar>
-        </div>
-        <Menu1
-          id="demo-positioned-menu"
-          aria-labelledby="demo-positioned-button"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
-        >
-          <MenuItem>Logout</MenuItem>
-          <Link
-            to="https://info-18ts.onrender.com"
-            style={{ textDecoration: "none", color: "rgb(0, 0, 0, 0.90)" }}>
-            <MenuItem onClick={handleClose}>Home</MenuItem>
-          </Link>
-        </Menu1>
+        </div>     
       </div>
     </div>
   );

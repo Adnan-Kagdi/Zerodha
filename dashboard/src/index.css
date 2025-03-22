@@ -92,7 +92,7 @@ code {
   flex-basis: 68%;
   height: 100%;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow-y: auto; 
   padding: 3% 2%;
 }
 

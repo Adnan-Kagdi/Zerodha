@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { Alert } from "@mui/material";
 import "./Signup.css"
 
 function Signup() {
@@ -10,9 +11,16 @@ function Signup() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [validate, setValidate] = useState(false);
 
     const handleSignup = async (e) => {
         e.preventDefault();
+
+        if (!email || !password) {
+            return setValidate(true);
+        } else {
+            setValidate(false);
+        }
 
         try {
             const res = await axios.post("https://zerodha-byxx.onrender.com/signup", {
@@ -35,8 +43,18 @@ function Signup() {
         }
     }
 
+    const handleClosingAlert = () => {
+        setValidate(false);
+    }
+
     return (
         <div className="main-container">
+            <div className={!validate ? "d-none" : "mb-3 login-alert"}>
+                <Alert severity="error" onClose={handleClosingAlert}
+                    style={{ borderRadius: "30px" }}>
+                    Please fill out the required fields below.
+                </Alert>
+            </div>
             <div className="signup-container mt-5">
                 <div className="signup-box">
                     <form onSubmit={handleSignup} className=" g-3 needs-validation" noValidate>

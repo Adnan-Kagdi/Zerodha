@@ -58,9 +58,9 @@ button:focus-visible {
 }
 
 .nav-dashboard {
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.634) !important
+  font-weight: 500;
 }
+
 /* 
 .nav-dashboard:hover {
   color: rgba(0, 0, 0, 0.8)  !important

@@ -1,8 +1,8 @@
 // import Logout from "./Signup/Logout";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LogoutIcon from '@mui/icons-material/Logout';
 import "./Navbar.css";
 
 function Navbar() {
@@ -31,9 +31,19 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
 
-            <li style={userId ? { display: "none" } : {}} className="nav-item">
-              <Link className="nav-link" to="/login">Login</Link>
-            </li>
+            {userId ? (
+              <li className="nav-item">
+                <Link onClick={handleLogout} className="nav-link" to="/login">
+                  <LogoutIcon style={{ fontSize: "1.2rem", marginBottom: "0.1rem", marginRight: "0.22rem" }} />
+                  Logout
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">Login</Link>
+              </li>
+            )}
+
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
             </li>
@@ -49,14 +59,14 @@ function Navbar() {
             <li className="nav-item">
 
               {userId ? (
-                <Link className="nav-link nav-dashboard" to="https://dashboard-pka9.onrender.com">
+                <Link className="nav-dashboard nav-link" to="https://dashboard-pka9.onrender.com">
                   Dashboard
                   <ArrowForwardIcon className="mb-1 ms-1"
                     style={{ fontSize: "1.2rem" }}
                   />
                 </Link>
               ) : (
-                <Link className="nav-link nav-dashboard" to="/login">
+                <Link className="nav-dashboard nav-link" to="/login">
                   Dashboard
                   <ArrowForwardIcon className="mb-1 ms-1"
                     style={{ fontSize: "1.2rem" }}

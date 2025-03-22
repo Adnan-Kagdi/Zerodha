@@ -31,12 +31,16 @@
     color: #387ED1 !important
 }
 
+.navbar-nav li .nav-dashboard:hover {
+    color: rgb(247, 119, 73) !important
+}
+
 #navbarNav {
     margin-left: 28rem;
 }
 
 @media(max-width: 800px) {
-    .container-fluid img{
+    .container-fluid img {
         width: 25%;
     }
 }
